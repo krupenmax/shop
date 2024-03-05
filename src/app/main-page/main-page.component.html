@@ -1,0 +1,545 @@
+<header class="flex row align-center">
+	<div class="logo-image" routerLink="/">
+		<mat-icon class="lips-icon" svgIcon="lips"></mat-icon>
+		<span class="logo-name">DilDen</span>
+	</div>
+	<div class="search-wrapper">
+		<input class="search-input" placeholder="Поиск товаров по названию или артикулу" />
+		<mat-icon svgIcon="search"></mat-icon>
+	</div>
+	<div class="cart-wrapper flex row">
+		<mat-icon svgIcon="cart"></mat-icon>
+		<div class="cart-info-wrapper flex col justify-center align-center">
+			<span>Товаров: 0</span>
+			<span>На сумму: 0.00</span>
+		</div>
+	</div>
+</header>
+
+<section (mouseleave)="resetTab()">
+	<div class="menu-wrapper">
+		<button mat-stroked-button color="primary" routerLink="/products/sex-toys" (mouseenter)="activeTab = 'sexToys'">
+			<span class="menu-button-content">
+				<span>Секс-игрушки</span>
+				<mat-icon svgIcon="chevron_down"></mat-icon>
+			</span>
+		</button>
+		<button
+			mat-stroked-button
+			color="primary"
+			routerLink="/products/cloth-linen"
+			(mouseenter)="activeTab = 'clothes'"
+		>
+			<span class="menu-button-content">
+				<span>Одежда и бельё</span>
+				<mat-icon svgIcon="chevron_down"></mat-icon>
+			</span>
+		</button>
+		<button
+			mat-stroked-button
+			color="primary"
+			routerLink="/products/all-for-sex"
+			(mouseenter)="activeTab = 'allForSex'"
+		>
+			<span class="menu-button-content">
+				<span>Всё для секса</span>
+				<mat-icon svgIcon="chevron_down"></mat-icon>
+			</span>
+		</button>
+		<button mat-stroked-button color="primary" routerLink="/products/bdsm" (mouseenter)="activeTab = 'bdsm'">
+			<span class="menu-button-content">
+				<span>БДСМ игрушки</span>
+				<mat-icon svgIcon="chevron_down"></mat-icon>
+			</span>
+		</button>
+		<button mat-stroked-button color="primary" routerLink="/products/fetish" (mouseenter)="activeTab = 'fetish'">
+			<span class="menu-button-content">
+				<span>Фетиш</span>
+				<mat-icon svgIcon="chevron_down"></mat-icon>
+			</span>
+		</button>
+		<button mat-stroked-button color="primary" routerLink="/products/gifts" (mouseenter)="activeTab = 'gifts'">
+			<span class="menu-button-content">
+				<span>Секс подарки</span>
+				<mat-icon svgIcon="chevron_down"></mat-icon>
+			</span>
+		</button>
+		<button mat-stroked-button color="primary" routerLink="/products/penis" (mouseenter)="activeTab = 'penis'">
+			<span class="menu-button-content">
+				<span>Увеличение члена</span>
+				<mat-icon svgIcon="chevron_down"></mat-icon>
+			</span>
+		</button>
+		<div *ngIf="activeTab === 'sexToys'" class="dropdown-wrapper grid-4 sex-toys-categories-wrapper">
+			<div class="col-1 flex col">
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/sex-toys/anal-toys">Анальные игрушки</a>
+					<a routerLink="/products/sex-toys/butt-plugs">Анальные пробки</a>
+					<a routerLink="/products/sex-toys/beads-chains-balls">Бусы, цепочки и шарики</a>
+					<a routerLink="/products/sex-toys/for-double-penetration">Для двойного проникновения</a>
+					<a routerLink="/products/sex-toys/enemas-anal-shower">Клизмы и анальный душ</a>
+					<a routerLink="/products/sex-toys/prostate-massagers">Массажёры простаты</a>
+					<a routerLink="/products/sex-toys/fisting">Фистинг</a>
+				</div>
+
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/sex-toys/masturbators">Мастурбаторы</a>
+					<a routerLink="/products/sex-toys/fleshlight">Fleshlight</a>
+					<a routerLink="/products/sex-toys/auto-masturbators">Автоматические мастурбаторы</a>
+					<a routerLink="/products/sex-toys/vaginas-mouths-asses">Вагины, ротики и попки</a>
+					<a routerLink="/products/sex-toys/masturbators-flasks">Мастурбаторы-колбы</a>
+					<a routerLink="/products/sex-toys/unrealistic-masturbators">Нереалистичные мастурбаторы</a>
+					<a routerLink="/products/sex-toys/sex-at-distance">Секс на расстоянии</a>
+					<a routerLink="/products/sex-toys/tenga">Яйца и тубы TENGA</a>
+				</div>
+			</div>
+
+			<div class="col-2 flex col">
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/sex-toys/vaginal-balls-exercise-machines"
+						>Вагинальные шарики и тренажёры</a
+					>
+					<a routerLink="/products/sex-toys/no-vibration">Без вибрации</a>
+					<a routerLink="/products/sex-toys/with-vibration">С вибрацией</a>
+					<a routerLink="/products/sex-toys/shifted-gravity-center">Со смещенным центром тяжести</a>
+					<a routerLink="/products/sex-toys/kegel-exercisers">Тренажёры кегеля</a>
+				</div>
+
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/sex-toys/sex-dolls">Секс-куклы</a>
+					<a routerLink="/products/sex-toys/inflatable-sex-dolls">Надувные секс-куклы</a>
+					<a routerLink="/products/sex-toys/realistic-sex-dolls">Реалистиные секс-куклы</a>
+				</div>
+
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/sex-toys/vacuum-pumps">Вакуумные помпы</a>
+					<a routerLink="/products/sex-toys/female-vacuum-pumps">Вакуумные помпы для женщин</a>
+					<a routerLink="/products/sex-toys/male-vacuum-pumps">Вакуумные помпы для мужчин</a>
+				</div>
+			</div>
+
+			<div class="col-3 flex col">
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/sex-toys/vibrators-massagers">Вибраторы и массажёры</a>
+					<a routerLink="/products/sex-toys/hi-tech-vibrators">Вибраторы Hi-Tech</a>
+					<a routerLink="/products/sex-toys/vibrators-for-couples">Вибраторы для пар</a>
+					<a routerLink="/products/sex-toys/rabbit-vibrators">Вибраторы кролики</a>
+					<a routerLink="/products/sex-toys/realistic-vibrators">Вибраторы реалистики</a>
+					<a routerLink="/products/sex-toys/vibrating-massagers">Вибромассажёры</a>
+					<a routerLink="/products/sex-toys/vibrating-panties">Вибротрусики</a>
+					<a routerLink="/products/sex-toys/vibrating-balls-bullets">Виброяйца и вибропули</a>
+					<a routerLink="/products/sex-toys/for-g">Для точки G</a>
+					<a routerLink="/products/sex-toys/classic">Классические</a>
+					<a routerLink="/products/sex-toys/mini-vibrators">Мини-вибраторы</a>
+					<a routerLink="/products/sex-toys/pulsators">Пульсаторы</a>
+				</div>
+			</div>
+
+			<div class="col-4 flex col">
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/sex-toys/sex-machines">Секс-машины</a>
+				</div>
+
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/sex-toys/strapons-phalluses">Страпоны и фаллосы</a>
+					<a routerLink="/products/sex-toys/strapless-strapons">Безремневые страпоны</a>
+					<a routerLink="/products/sex-toys/strapons">Страпоны на ремне</a>
+					<a routerLink="/products/sex-toys/dildos">Фалломититаторы и дилдо</a>
+					<a routerLink="/products/sex-toys/penile-prostheses">Фаллопротезы</a>
+				</div>
+
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/sex-toys/clitoral-stimulators">Стимуляторы клитора</a>
+				</div>
+
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/sex-toys/toy-care">Уход за игрушками</a>
+				</div>
+			</div>
+		</div>
+		<div *ngIf="activeTab === 'clothes'" class="dropdown-wrapper clothes-wrapper">
+			<div class="col-1">
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/cloth-linen/body-catsuits">Боди и кэтсьюиты</a>
+					<a class="bold" routerLink="/products/cloth-linen/linen-sets">Комплекты белья</a>
+					<a class="bold" routerLink="/products/cloth-linen/corsets">Корсеты</a>
+					<a class="bold" routerLink="/products/cloth-linen/masks-costumes">Костюмы и маски</a>
+					<a class="bold" routerLink="/products/cloth-linen/men-underwear">Мужское бельё</a>
+					<a class="bold" routerLink="/products/cloth-linen/dresses-skirts">Платья и юбки</a>
+					<a class="bold" routerLink="/products/cloth-linen/garters-belts">Подвязки и пояса</a>
+					<a class="bold" routerLink="/products/cloth-linen/shirts-negligees">Сорочки и пеньюары</a>
+					<a class="bold" routerLink="/products/cloth-linen/panties">Трусики</a>
+					<a class="bold" routerLink="/products/cloth-linen/stockings-tights">Чулки и колготки</a>
+				</div>
+			</div>
+		</div>
+		<div *ngIf="activeTab === 'allForSex'" class="dropdown-wrapper all-for-sex-wrapper grid-5">
+			<div class="col-1">
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/all-for-sex/lubricants-greases"
+						>Лубриканты, интимные смазки</a
+					>
+					<a routerLink="/products/all-for-sex/anal-lubricants">Анальные смазки</a>
+					<a routerLink="/products/all-for-sex/oral-lubricants">Оральные смазки</a>
+					<a routerLink="/products/all-for-sex/vaginal-lubricants">Вагинальные смазки</a>
+					<a routerLink="/products/all-for-sex/aphrodisian-lubricants">Возбуждающие смазки</a>
+					<a routerLink="/products/all-for-sex/prolongators">Пролонгаторы</a>
+				</div>
+			</div>
+			<div class="col-2">
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/all-for-sex/perfume-with-pheromones">Духи с феромонами</a>
+					<a routerLink="/products/all-for-sex/female-pheromones">Женские феромоны</a>
+					<a routerLink="/products/all-for-sex/male-pheromones">Мужские феромоны</a>
+				</div>
+			</div>
+
+			<div class="col-3">
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/all-for-sex/condoms">Презервативы</a>
+					<a routerLink="/products/all-for-sex/condoms-other-manufacturers">Других производителей</a>
+					<a routerLink="/products/all-for-sex/context-condoms">Производитилей Контекс (Contex)</a>
+					<a routerLink="/products/all-for-sex/durex-condoms">Производитилей Дюрекс (Durex)</a>
+					<a routerLink="/products/all-for-sex/cirrose-condoms">Презервативы с усиками</a>
+					<a routerLink="/products/all-for-sex/big-condoms">Большие презервативы</a>
+					<a routerLink="/products/all-for-sex/oral-condoms">Оральные презервативы</a>
+					<a routerLink="/products/all-for-sex/thin-condoms">Тонкие презервативы</a>
+					<a routerLink="/products/all-for-sex/anesthetic-condoms">Презевативы с анестетиком</a>
+				</div>
+			</div>
+
+			<div class="col-4">
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/all-for-sex/cosmetics-massage">Косметика и массаж</a>
+					<a routerLink="/products/all-for-sex/aroma-massage-candales">Аромасвечи массажные</a>
+					<a routerLink="/products/all-for-sex/massage-oils">Масла для массажа</a>
+					<a routerLink="/products/all-for-sex/intimate-hydiene">Интимная гигиена</a>
+				</div>
+
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/all-for-sex/ticklers">Тиклеры</a>
+				</div>
+
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/all-for-sex/aphrodisiacs">Возбуждающие средства</a>
+					<a routerLink="/products/all-for-sex/female-aphrodisiacs">Женские возбудители</a>
+					<a routerLink="/products/all-for-sex/male-aphrodisiacs">Мужские возбудители</a>
+				</div>
+			</div>
+
+			<div class="col-5">
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/all-for-sex/gloves">Перчатки</a>
+				</div>
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/all-for-sex/poppers">Попперсы</a>
+				</div>
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/all-for-sex/pestis">Пэстисы</a>
+				</div>
+			</div>
+		</div>
+		<div *ngIf="activeTab === 'bdsm'" class="dropdown-wrapper bdsm-wrapper grid-4">
+			<div class="col-1">
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/bdsm/bondage-fixation">Бондаж и фиксация</a>
+					<a routerLink="/products/bdsm/handcuffs">Наручники</a>
+					<a routerLink="/products/bdsm/ropes-tapes">Верёвки и ленты</a>
+					<a routerLink="/products/bdsm/shackles">Оковы и кандалы</a>
+					<a routerLink="/products/bdsm/spacers">Распорки</a>
+					<a routerLink="/products/bdsm/harnesses-belts">Сбруи и портупеи</a>
+					<a routerLink="/products/bdsm/bandage-accessories">Аксессуары для бондажа</a>
+					<a routerLink="/products/bdsm/beginner-kits">Комплекты для новичков</a>
+				</div>
+
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/bdsm/torture-penis-genitals-nipples"
+						>Пытки члена,<br />
+						гениталий и сосков</a
+					>
+					<a routerLink="/products/bdsm/nipple-clamps">Зажимы на соски</a>
+					<a routerLink="/products/bdsm/ballbusting-svt">Боллбастинг и СВТ</a>
+					<a routerLink="/products/bdsm/urethral-bougies-plugs">Уретральны бужи и плаги</a>
+					<a routerLink="/products/bdsm/electrical-stimulation">Электростимуляция</a>
+				</div>
+			</div>
+
+			<div class="col-2">
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/bdsm/gags-mouth-spreaders">Кляпы и расширители рта</a>
+					<a routerLink="/products/bdsm/ball-gags">Кляпы-шарики</a>
+					<a routerLink="/products/bdsm/ring-gags-dilators">Кляпы-кольца и расширители</a>
+					<a routerLink="/products/bdsm/gags-bridles">Кляпы-трензели и уздечки</a>
+				</div>
+
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/bdsm/chastity-belts">Пояса верности</a>
+					<a routerLink="/products/bdsm/male-chastity-belts">Мужские пояса верности</a>
+					<a routerLink="/products/bdsm/female-chastity-belts">Женские пояса верности</a>
+				</div>
+			</div>
+
+			<div class="col-3">
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/bdsm/masks-headbands">Маски и повязки</a>
+					<a routerLink="/products/bdsm/eye-masks">Маски для глаза</a>
+					<a routerLink="/products/bdsm/helmets">БДСМ шлема</a>
+				</div>
+
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/bdsm/sex-furniture">Мебели для секса</a>
+				</div>
+
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/bdsm/sex-swing">Секс-качели</a>
+				</div>
+			</div>
+
+			<div class="col-4">
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/bdsm/collars-leashes">Ошейники и поводки</a>
+					<a routerLink="/products/bdsm/soft-collars">Мягкие ошейники</a>
+					<a routerLink="/products/bdsm/leather-collars">Кожаные ошейники</a>
+					<a routerLink="/products/bdsm/metal-collars">Металлические ошейники</a>
+				</div>
+			</div>
+		</div>
+		<div *ngIf="activeTab === 'fetish'" class="dropdown-wrapper fetish-wrapper">
+			<div class="col-1">
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/fetish/leather-latex-clothing">Одежда из кожи и латекса</a>
+					<a class="bold" routerLink="/products/fetish/pet-play">Пэт-плей</a>
+					<a class="bold" routerLink="/products/fetish/decoration">Фетиш украшения</a>
+				</div>
+			</div>
+		</div>
+		<div *ngIf="activeTab === 'gifts'" class="dropdown-wrapper gifts-wrapper">
+			<div class="col-1">
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/gifts/certificates">Подарочные сертификаты</a>
+					<a class="bold" routerLink="/products/gifts/romantic-gifts">Романтические сертификаты</a>
+					<a class="bold" routerLink="/products/gifts/sex-games">Секс-игры</a>
+					<a class="bold" routerLink="/products/gifts/kits">Секс-наборы</a>
+					<a class="bold" routerLink="/products/gifts/souvenirs-jokes">Сувениры и приколы</a>
+					<a class="bold" routerLink="/products/gifts/books">Эротические книги</a>
+				</div>
+			</div>
+		</div>
+		<div *ngIf="activeTab === 'penis'" class="dropdown-wrapper penis-wrapper">
+			<div class="col-1">
+				<div class="subcategory-wrapper flex col">
+					<a class="bold" routerLink="/products/penis/hydraulic-pumps">Гидропомпы</a>
+					<a class="bold" routerLink="/products/penis/enlargement-creams">Крема для увеличения члена</a>
+					<a class="bold" routerLink="/products/penis/attachments-extenders">Насадки и удлинители члена</a>
+					<a class="bold" routerLink="/products/penis/extenders">Экстендеры</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<ng-container *ngIf="isMainPage">
+	<section class="main-category-wrapper">
+		<div class="category-wrapper flex col">
+			<a class="category-header" routerLink="/products/sex-toys">Секс-игрушки</a>
+			<a routerLink="/products/sex-toys/anal-toys">Анальные игрушки</a>
+			<a routerLink="/products/sex-toys/vaginal-balls-exercise-machines">Вагинальные шарики и тренажёры</a>
+			<a routerLink="/products/sex-toys/vibrators-massagers">Вибраторы и массажёры</a>
+			<a routerLink="/products/sex-toys/sex-machines">Секс-машины</a>
+			<a routerLink="/products/sex-toys/sex-dolls">Секс-куклы</a>
+			<a routerLink="/products/sex-toys/clitoral-stimulators">Стимуляторы клитора</a>
+			<a routerLink="/products/sex-toys/strapons-phalluses">Страпоны и фаллосы</a>
+			<a routerLink="/products/sex-toys/masturbators">Мастурбаторы</a>
+			<a routerLink="/products/sex-toys/cock-rings">Эрекционные кольца</a>
+			<a routerLink="/products/sex-toys/vacuum-pumps">Вакуумные помпы</a>
+			<a routerLink="/products/sex-toys/toy-care">Уход за игрушками</a>
+		</div>
+		<div class="category-wrapper flex col">
+			<a class="category-header" routerLink="/products/cloth-linen">Одежда и бельё</a>
+			<a routerLink="/products/cloth-linen/body-catsuits">Боди и кэтсьюиты</a>
+			<a routerLink="/products/cloth-linen/linen-sets">Комплекты белья</a>
+			<a routerLink="/products/cloth-linen/corsets">Корсеты</a>
+			<a routerLink="/products/cloth-linen/masks-costumes">Костюмы и маски</a>
+			<a routerLink="/products/cloth-linen/men-underwear">Мужское бельё</a>
+			<a routerLink="/products/cloth-linen/dresses-skirts">Платья и юбки</a>
+			<a routerLink="/products/cloth-linen/garters-belts">Подвязки и пояса</a>
+			<a routerLink="/products/cloth-linen/shirts-negligees">Сорочки и пеньюары</a>
+			<a routerLink="/products/cloth-linen/panties">Трусики</a>
+			<a routerLink="/products/cloth-linen/stockings-tights">Чулки и колготки</a>
+		</div>
+		<div class="category-wrapper flex col">
+			<a class="category-header" routerLink="/products/all-for-sex">Всё для секса</a>
+			<a routerLink="/products/all-for-sex/lubricants-greases">Лубриканты и смазки</a>
+			<a routerLink="/products/all-for-sex/perfume-with-pheromones">Духи с феромонами</a>
+			<a routerLink="/products/all-for-sex/condoms">Презервативы</a>
+			<a routerLink="/products/all-for-sex/cosmetics-massage">Косметика и массаж</a>
+			<a routerLink="/products/all-for-sex/gloves">Перчатки</a>
+			<a routerLink="/products/all-for-sex/poppers">Попперсы</a>
+			<a routerLink="/products/all-for-sex/pestis">Пастисы</a>
+			<a routerLink="/products/all-for-sex/ticklers">Тиклеры</a>
+			<a routerLink="/products/all-for-sex/aphrodisiacs">Возбуждающие средства</a>
+		</div>
+		<div class="category-wrapper flex col">
+			<a class="category-header" routerLink="/products/bdsm">Бдсм игрушки</a>
+			<a routerLink="/products/bdsm/bondage-fixation">Бондаж и фиксации</a>
+			<a routerLink="/products/bdsm/gags-mouth-spreaders">Кляпы и расширители рта</a>
+			<a routerLink="/products/bdsm/collars-leashes">Ошейники и поводки</a>
+			<a routerLink="/products/bdsm/masks-headbands">Маски и повязки</a>
+			<a routerLink="/products/bdsm/flogging">Порка</a>
+			<a routerLink="/products/bdsm/chastity-belts">Поясы верности</a>
+			<a routerLink="/products/bdsm/torture-penis-genitals-nipples">Пытка члена, гениталий и сосков</a>
+			<a routerLink="/products/bdsm/sex-furniture">Мебель для секса</a>
+			<a routerLink="/products/bdsm/kits">Наборы БДСМ</a>
+			<a routerLink="/products/bdsm/sex-swing">Секс-качели</a>
+		</div>
+		<div class="category-wrapper flex col" routerLink="/products/gifts">
+			<a class="category-header" routerLink="/products/gifts">Секс-подарки</a>
+			<a routerLink="/products/gifts/certificates">Подарочные сертификаты</a>
+			<a routerLink="/products/gifts/romantic-gifts">Романтичные подарки</a>
+			<a routerLink="/products/gifts/sex-games">Секс игры</a>
+			<a routerLink="/products/gifts/kits">Секс наборы</a>
+			<a routerLink="/products/gifts/souvenirs-jokes">Сувениры и приколы</a>
+			<a routerLink="/products/gifts/books">Эротические книги</a>
+		</div>
+		<div class="category-wrapper flex col">
+			<a class="category-header" routerLink="/products/penis">Увеличение члена</a>
+			<a routerLink="/products/penis/hydraulic-pumps">Гидропомпы</a>
+			<a routerLink="/products/penis/enlargement-creams">Крема для увеличения члена</a>
+			<a routerLink="/products/penis/attachments-extenders">Насадки и удлинители члена</a>
+			<a routerLink="/products/penis/extenders">Экстендеры</a>
+		</div>
+		<div class="category-wrapper flex col" routerLink="/products/fetish">
+			<a class="category-header" routerLink="/products/fetish">Фетиш</a>
+			<a routerLink="/products/fetish/leather-latex-clothing">Одежда из кожи и латекса</a>
+			<a routerLink="/products/fetish/pet-play">Пэт-плей</a>
+			<a routerLink="/products/fetish/decoration">Фетиш украшения</a>
+		</div>
+	</section>
+
+	<section class="comments-wrapper flex col">
+		<div class="rate-wrapper flex col">
+			<div class="first-text">Отзывы о магазине</div>
+			<div>Средняя оценка</div>
+			<div class="rate-box">5,0</div>
+			<div class="star-wrapper flex row">
+				<ng-container *ngFor="let start of [1, 2, 3, 4, 5]">
+					<mat-icon svgIcon="star"></mat-icon>
+				</ng-container>
+			</div>
+			<div>Всего оценок: 10</div>
+		</div>
+		<div class="comment-wrapper">
+			<div *ngFor="let comment of [1, 2, 3]" class="comment-item">
+				<span class="name">LuidMilla</span>
+				<div class="comment-rate">
+					<ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
+						<mat-icon svgIcon="star"></mat-icon>
+					</ng-container>
+				</div>
+				<div class="comment-text">
+					Потрясающий магазин, ассортимент товаров большой, ребята сработали отлично, давно такого сервиса...
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="manufacturer-wrapper">
+		<h2>Производители</h2>
+		<div class="manufacturer-logos-wrapper"></div>
+		<button>Все бренды</button>
+	</section>
+</ng-container>
+
+<app-product-grid *ngIf="!isMainPage"></app-product-grid>
+
+<footer class="flex col">
+	<h2>Магазин секс товаров "Store". Лучший выбор игрушек для взрослых.</h2>
+
+	<div class="default-footer-text">
+		Добро пожаловать в мир чувственных наслаждений и реализации самых смелых эротических фантазий! Магазин Store.by
+		в городе Минск – это не просто интернет-магазин интимных товаров, а уникальный сервис, где можно купить игрушки
+		для взрослых на любой вкус. Тем, кому хочется разнообразить сексуальную жизнь, открыть совершенно новые грани
+		удовольствий и раскрыть потенциал партнера, не обойтись без специальных атрибутов. Предлагаем множество товаров
+		для фетиша, неординарного белья и товаров для БДСМ, среди которых обязательно найдется подходящий вариант.
+		Откройте себе и партнеру новую ступень желаний, а все необходимое для этого предлагает наш секс шоп.
+	</div>
+
+	<h3>Исключительное качество и приятная цена</h3>
+
+	<div class="default-footer-text">
+		Продукция, которую представляет наш интернет-магазин, изготовлена ведущими брендами секс-индустрии из
+		качественных гипоаллергенных материалов. Она прошла необходимую сертификацию в Минске и соответствует
+		международным нормам безопасности интимных принадлежностей. Представленные в каталоге товары не содержат
+		токсичных составляющих, поэтому могут использоваться без вреда для здоровья.
+	</div>
+	<div class="default-footer-text">
+		Соотношение качества и стоимости интим-игрушек оптимально, ведь секс шоп Store.by сотрудничает с производителями
+		изделий, обеспечивая прямые поставки. Дешевые цены и скидки станут дополнительным бонусом к богатому выбору, и
+		высокому качеству приспособлений сексуальной тематики. Мы дарим скидку -3% на все товары (кроме акционных) за
+		регистрацию на сайте, которая займет у вас не более двух минут.
+	</div>
+
+	<h2>Интимные товары с уклоном на фетиш и БДСМ.</h2>
+
+	<div class="default-footer-text">
+		Подарить незабываемый экстаз – вот основная задача БДСМ игрушек во время секса. Холодный блеск металлических
+		аксессуаров, резкие звуки ударов плетью, глянцевый шик латексной одежды, использование наручников и
+		импровизированных кляпов – всё это невероятно возбуждает любителей фетиша и воздействует как дополнительный
+		стимулятор сексуального влечения.<br />
+		Популярный онлайн магазин товаров для взрослых с доставкой предлагает лучший выбор секс атрибутики в Беларуси.
+		Мы постоянно обновляем товары под потребности наших клиентов. В каталоге Store.by вы найдете эффектные маски и
+		фиксаторы, плети и стэки, бондажи и страпоны, принадлежности для фистинга, электростимуляторы и другие игрушки
+		для взрослых, которые можно использовать в ролевых играх. Вы обязательно оцените по достоинству ассортимент,
+		осталось лишь выбрать подходящий комплект!
+	</div>
+
+	<h3>Конфиденциальность</h3>
+
+	<div class="default-footer-text">
+		Мы понимаем тех, кто не хочет, чтобы его эротические пристрастия стали достоянием общественности, поэтому
+		гарантируем анонимность перечня, попадающего в заказ. Никаких секс эмблем и обозначений на финишной упаковке!
+		Покупателям нашего секс шопа на постоянной основе гарантируется 100% конфиденциальность.
+	</div>
+
+	<h3>Оформление заказа и доставка</h3>
+
+	<div class="default-footer-text">
+		Готовы выбрать и заказать интимный набор или белье, чтобы сполна насладиться новыми ощущениями? К вашим услугам
+		онлайн каталог интимных товаров, удобно классифицированные по разделам. Оперативный прием заказов вас порадует.
+		Консультанты Candyshop.by ответят на интересующие вопросы, помогут оформить покупку максимально быстро. Доставка
+		заказов по Минску от нашего интим-шопа осуществляется курьером на дом. По территории Беларуси осуществляется
+		почтовая пересылка.
+	</div>
+
+	<div class="warning-text">
+		Внимание! Данный сайт содержит контент и материалы только для взрослых, неприемлемые для несовершеннолетних лиц.
+		Просматривая этот сайт, Вы подтверждаете, что Вам исполнилось 18 лет. Если Вы не достигли возраста 18 лет,
+		пожалуйста, покиньте данный сайт!<br />
+		Весь представленный на сайте контент носит ознакомительно-развлекательный характер и не стремится оскорбить или
+		унизить кого-либо. Весь контент, включая жесткие практики и форматы отношений, такие, как БДСМ, носят
+		исключительно добровольный игровой характер. Авторы сайта не поддерживают настоящее насилие, оскорбление или
+		унижение личности.<br />
+		На данном сайте представлены сцены и контент сексуального характера, которые могут отходить от общепринятых
+		норм. Если вы не приемлите подобные форматы сексуальных отношений, пожалуйста, покиньте данный сайт.
+	</div>
+
+	<div class="footer-bottom-info-wrapper">
+		<div class="address-info">
+			ИП Ошкин Евгений Олегович<br />
+			Свидетельство о государственной<br />
+			регистрации № 691730886, выдано<br />
+			05.07.2018г. Жодинским горисполкомом<br />
+			Торговый реестр №422605 от 31.07.2018<br />
+			Адрес: 220092, Республика Беларусь, г.<br />
+			Минск, ул. Притыцкого, д. 29
+		</div>
+		<div class="age-warning">18+</div>
+		<div class="contact-info flex col">
+			<span class="underline">+375 (33) 305-90-95</span>
+			<span class="underline">online.candyshop.by.gmail.com</span>
+			<span>Режим работы: с 10:00 до 21:00</span>
+			<span>Обработка заказов: с 10:00 до 20:00</span>
+			<span>Доставка: с 12:00 до 22:00</span>
+		</div>
+	</div>
+</footer>

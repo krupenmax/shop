@@ -1,0 +1,40 @@
+:host {
+	font-size: 1em;
+	animation-name: appearHeader;
+	animation-duration: 0.5s;
+}
+
+@keyframes appearHeader {
+	from {
+		opacity: 25%;
+		transform: translateY(-25px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+header {
+	padding: 8px 70px;
+	white-space: nowrap;
+}
+
+.social-media-icons {
+	margin-left: 32px;
+	gap: 4px;
+}
+
+.phone-number {
+	font-weight: 700;
+	margin-left: 10px;
+}
+
+.schedule-info {
+	margin-left: 24px;
+}
+
+.payments {
+	margin-right: 50px;
+	margin-left: auto;
+}

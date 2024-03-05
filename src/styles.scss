@@ -11,7 +11,41 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$shop-primary: mat.define-palette(mat.$indigo-palette);
+
+$shop-palette: (
+	50: #fff,
+	100: #fff,
+	200: #fff,
+	300: #fff,
+	400: #fff,
+	500: #fff,
+	600: #fff,
+	700: #fff,
+	800: #fff,
+	900: #fff,
+	A100: #fff,
+	A200: #fff,
+	A400: #fff,
+	A700: #fff,
+	contrast: (
+		50: #000000,
+		100: #000000,
+		200: #000000,
+		300: #000000,
+		400: #ffffff,
+		500: #ffffff,
+		600: #ffffff,
+		700: #ffffff,
+		800: #ffffff,
+		900: #ffffff,
+		A100: #000000,
+		A200: #000000,
+		A400: #000000,
+		A700: #ffffff,
+	),
+);
+
+$shop-primary: mat.define-palette($shop-palette);
 $shop-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
@@ -36,11 +70,59 @@ $shop-theme: mat.define-light-theme(
 
 /* You can add global styles to this file, and also import other style files */
 
+@import url("./assets/fonts/fonts.css");
+
+:root {
+	--default-black: rgba(0, 0, 0, 1);
+	--default-white: rgba(234, 234, 234, 1);
+}
+
 html,
 body {
 	height: 100%;
 }
+
 body {
 	margin: 0;
-	font-family: Roboto, "Helvetica Neue", sans-serif;
+	width: 100%;
+	min-height: 100%;
+	letter-spacing: 0.005em;
+	font-family: Tahoma;
+	background-color: var(--default-black);
+	color: var(--default-white);
+}
+
+.flex {
+	display: flex;
+}
+
+.col {
+	flex-direction: column;
+}
+
+.row {
+	flex-wrap: row;
+}
+
+.justify-center {
+	justify-content: center;
+}
+
+.align-center {
+	align-items: center;
+}
+
+.mat-mdc-menu-item-text {
+	color: #fff;
+}
+
+.mat-mdc-menu-content {
+	background-color: #000 !important;
+	border: 1px solid #fff;
+	border-radius: 8px;
+}
+
+.secondary-flat-button {
+	background-color: #fff;
+	color: #000;
 }

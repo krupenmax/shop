@@ -1,0 +1,30 @@
+<header>
+	<h2>Продукт</h2>
+</header>
+
+<section>
+	<div class="sort-wrapper flex row">
+		<span>Сортировать</span>
+		<div>Рекомендуемые</div>
+	</div>
+	<div>Всего <b>2</b> товара</div>
+	<div class="product-list-wrapper flex row">
+		<div *ngFor="let item of [1, 2, 3, 4]" class="product-item flex col">
+			<img width="280" height="328" />
+			<div class="price">0, 00 руб.</div>
+			<div class="info-wrapper flex col">
+				<label>Название</label>
+				<span>Название</span>
+			</div>
+			<!-- <div class="info-wrapper">
+
+			</div> -->
+			<button class="secondary-flat-btn">В корзину</button>
+		</div>
+	</div>
+	<div class="paginator flex row">
+		<div *ngFor="let page of [1, 2, 3, 4, 5, 6, 7, 8, 9]" class="page-item">{{ page }}</div>
+		<a>Следующая страница</a>
+		<a>В конец</a>
+	</div>
+</section>
